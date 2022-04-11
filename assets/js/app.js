@@ -1,3 +1,5 @@
+const gameOverMenu_div = document.querySelector(".game-over-menu");
+
 let pieceToMove;
 let finalSquare;
 let currentSquare;
@@ -76,14 +78,14 @@ function checkCheckMate() {
 function isCheckMate() {
   let winner, loser;
   if (turn === "b") {
-    winner = "w";
+    winner = "White";
     loser = "b";
   } else {
-    winner = "b";
+    winner = "Black";
     loser = "w";
   }
-
-  console.log("winner:", winner);
+  document.querySelector(".winner").textContent = winner;
+  gameOverMenu_div.style.display = "flex";
 }
 
 function dragStart(e) {
@@ -97,13 +99,12 @@ function dragStart(e) {
     pieceToMove.dataset.index
   );
 
-  moves = pieceObj.returnPossibleMoves().filter((move) => {
-    return pieceObj.verifyLegalMove(move, pieceToMove);
-  });
-
-  eatMoves = pieceObj.returnPossibleEatMoves().filter((move) => {
-    return pieceObj.verifyLegalMove(move, pieceToMove);
-  });
+  moves = pieceObj
+    .returnPossibleMoves()
+    .filter((move) => pieceObj.verifyLegalMove(move, pieceToMove));
+  eatMoves = pieceObj
+    .returnPossibleEatMoves()
+    .filter((move) => pieceObj.verifyLegalMove(move, pieceToMove));
 
   highlightPossibleMoves(moves);
   highlightPossibleEatMoves(eatMoves);
@@ -134,7 +135,6 @@ function dragEnd(e) {
   if (!pieceToMove) return;
   pieceToMove.style.cursor = "grab";
 
-  // if (finalSquare.id !== pieceToMove.parentElement.id)
   removeHighlightMoves();
   currentSquare.classList.remove("highlights-border");
 
@@ -196,11 +196,16 @@ board_div.addEventListener("mousemove", dragMove);
 board_div.addEventListener("mouseup", dragEnd);
 board_div.addEventListener("mouseleave", dragEnd);
 
+function removeBoard() {
+  console.log('eeee')
+  boardArr.forEach((elem) => board_div.removeChild(elem));
+}
+
 function restartGame() {
+  removeBoard();
   k = 0;
   boardArr = [];
   piecesArr = [];
-  board_div.innerHTML = "";
 
   startGame();
   piecesArr.forEach((elem) => {
@@ -211,7 +216,10 @@ function restartGame() {
     elem.addEventListener("mousedown", dragStart);
   });
   turn = "w";
+  gameOverMenu_div.style.display = "none";
 }
 restartGame();
 
-document.querySelector(".restart-btn").addEventListener("click", restartGame);
+document
+  .querySelectorAll(".restart-btn")
+  .forEach((elem) => elem.addEventListener("click", restartGame));
