@@ -1,0 +1,23 @@
+<svg class="svg rook" width="28" height="31" viewBox="0 0 28 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g >
+<path id="Vector" fill-rule="evenodd" clip-rule="evenodd" d="M1 29.6667H26.8V26.8H1V29.6667Z" fill="white" stroke="black" stroke-width="1.5" stroke-linejoin="round"/>
+<path id="Vector_2" fill-rule="evenodd" clip-rule="evenodd" d="M3.8667 26.8V22.9778H23.9333V26.8H3.8667Z" fill="white" stroke="black" stroke-width="1.5" stroke-linejoin="round"/>
+<g id="Vector_3">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.91113 5.77778V1H6.73336V2.91111H11.5111V1H16.2889V2.91111H21.0667V1H24.8889V5.77778" fill="white"/>
+<path d="M2.91113 5.77778V1H6.73336V2.91111H11.5111V1H16.2889V2.91111H21.0667V1H24.8889V5.77778" stroke="black" stroke-width="1.5" stroke-linejoin="round"/>
+</g>
+<g id="Vector_4">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M24.8889 5.77777L22.0222 8.64444H5.7778L2.91113 5.77777" fill="white"/>
+<path d="M24.8889 5.77777L22.0222 8.64444H5.7778L2.91113 5.77777" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Vector_5">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22.0222 8.64444V20.5889H5.77777V8.64444" fill="white"/>
+<path d="M22.0222 8.64444V20.5889H5.77777V8.64444" stroke="black" stroke-width="1.5"/>
+</g>
+<g id="Vector_6">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22.0223 20.5889L23.4556 22.9778H4.34448L5.77782 20.5889" fill="white"/>
+<path d="M22.0223 20.5889L23.4556 22.9778H4.34448L5.77782 20.5889" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<path id="Vector_7" d="M2.91113 5.77777H24.8889" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+</g>
+</svg>

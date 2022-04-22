@@ -1,0 +1,223 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"); */
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white-color-bg: #f9d38d;
+  --black-color-bg: #83533f;
+  --green-color: #537133;
+  font-size: 13px;
+}
+html {
+  overflow: hidden;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(28, 28, 28);
+  color: white;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+button {
+  color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 24em;
+  position: relative;
+}
+
+.square {
+  width: 3em;
+  height: 3em;
+}
+
+.white-square {
+  background-color: var(--white-color-bg);
+}
+.black-square {
+  background-color: var(--black-color-bg);
+}
+
+.pieces {
+  width: 3em;
+  height: 3em;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  cursor: grab;
+}
+
+.pieces svg {
+  position: absolute;
+  bottom: 0.25em;
+
+  width: 2.3em;
+}
+.pieces .pawn {
+  width: 1.6em;
+}
+
+.pieces .rook {
+  width: 1.9em;
+}
+
+.highlights-border {
+  border: 3px white solid;
+}
+.highlights-border div {
+  width: calc(3em - 8px);
+  height: calc(3em - 5px);
+}
+
+.possible-moves-highlight,
+.possible-eat-moves-highlight {
+  position: relative;
+}
+
+.possible-moves-highlight::before,
+.possible-eat-moves-highlight::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(229, 45, 45, 0.688);
+}
+
+.defoult-btn {
+  font-family: "Roboto", sans-serif;
+  padding: 0.5rem 1rem;
+  background-color: var(--green-color);
+  border: var(--green-color) solid 1px;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: backGround-color 100ms ease-in-out;
+  cursor: pointer;
+}
+.defoult-btn:hover {
+  background-color: #425c27;
+  border: #425c27 solid 1px;
+
+  box-shadow: 0 0 5px 0 #425c27;
+}
+
+.defoult-btn:active {
+  transform: scaleX(0.95) scaleY(0.95);
+}
+
+@media only screen and (min-width: 450px) {
+  :root {
+    font-size: 18px;
+  }
+  .board {
+    font-size: 18px;
+  }
+  .highlights-border {
+    border: 5px white solid;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  :root {
+    font-size: 18px;
+  }
+  .board {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  :root {
+    font-size: 18px;
+  }
+  .board {
+    font-size: 27px;
+  }
+  .container {
+    flex-direction: row;
+    gap: 5rem;
+  }
+}
+
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.game-over-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(68, 68, 68, 0.385);
+  z-index: 4;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+.game-over-menu > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+
+  background-color: white;
+  border-radius: 10px;
+
+  color: black;
+}
+
+.confirm-box-container {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(68, 68, 68, 0.385);
+  z-index: 4;
+  
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm-box  {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+
+  background-color: white;
+  border-radius: 10px;
+
+  color: black;
+}
