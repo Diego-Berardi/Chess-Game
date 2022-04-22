@@ -1,6 +1,6 @@
 import { pieces } from "./index";
-import svgQueenB from "../../img/Queen_B.svg";
-import svgQueenW from "../../img/Queen_W.svg";
+import svgQueenB from "../../img/queen_B.svg";
+import svgQueenW from "../../img/queen_W.svg";
 
 export class queen extends pieces {
   constructor(color, index) {
